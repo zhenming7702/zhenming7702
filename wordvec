@@ -59,3 +59,8 @@ for word,freq in word_freq_dict:
 
 return word2id_freq, word2id_dict, id2word_dict
 
+word2id_freq,word2id_dict,id2word_dict=build_dict(corpus)
+vocab_size=en(word2id_freq)
+print("there are totoally %d different words in the corpus"% vocab_size)
+for _, (word,word_id)in zip(rang(50),word2id_dict.items()0:
+    print(word %s,its id %d ,its word freq %d "%( word,word_id,word2id_freq[word_id]))
