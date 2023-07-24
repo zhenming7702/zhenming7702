@@ -40,4 +40,22 @@ print(corpus[:50])
 
 def build_dict(corpus)
     word_fred_dict=dict()
-    for word in corpus
+    for word in corpus:
+        if word not int word_fred_dict:
+            word_freq_dict[word]=0
+        word_freq_dict[word]+=1
+
+word_freq_dict =sorted(word_freq_dict.items(),key=lambda x:x[1], reverse=True)
+
+word2id_dict=dict()
+word2id_freq=dict()
+id2word_dict=dict()
+
+for word,freq in word_freq_dict:
+    curr_id= len(word2id_dict)
+    word2id_dict[word]=curr_id
+    word2id_freq[word2id_dict[word]]=freq
+    id2word_dict[curr_id]=word
+
+return word2id_freq, word2id_dict, id2word_dict
+
