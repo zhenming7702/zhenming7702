@@ -64,3 +64,11 @@ vocab_size=en(word2id_freq)
 print("there are totoally %d different words in the corpus"% vocab_size)
 for _, (word,word_id)in zip(rang(50),word2id_dict.items()0:
     print(word %s,its id %d ,its word freq %d "%( word,word_id,word2id_freq[word_id]))
+
+
+def convert_corpus_to_id(corpus,word2id_dict):
+    corpus=[word2id_dict[word] for word in corpus]
+    return corpus
+corpus=convert_corpus_to_id(corpus,word2id_dict)
+print("%d tokens in the corpus" % len(corpus))
+print(corpus[:50])
