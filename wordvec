@@ -20,3 +20,24 @@ def download()
         f.write(corpus)
     f.close()
 download()
+
+
+def load_text8():
+    with open("./text8.txt","r") as f:
+        corpus=f.read().strip("\n")
+    f.close()
+    return corpus
+corpus=load_text8()
+
+print(corpus[:50])
+
+def data_preprocess(corpus):
+    corpus=corpus.strip().lower()
+    corpus=corpus.split("")
+    return corpus
+corpus=data_preprocess(corpus)
+print(corpus[:50])
+
+def build_dict(corpus)
+    word_fred_dict=dict()
+    for word in corpus
